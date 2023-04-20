@@ -40,6 +40,9 @@ def getNumberOfCharacters(text: str) -> int:
     print(characteramount)
     return characteramount
     
+
+
+
 # opdracht 2
 def getNumberOfSentences(text: str) -> int:
     sentenceamount = 0 
@@ -52,22 +55,4 @@ def getNumberOfSentences(text: str) -> int:
 
 # opdracht 3
 def getNumberOfWords(text: str) -> int:
-    return len(text.split())
-
-# opdracht 5 
-def aviscore(text:str) ->int:
-    aviscore =0 
-    gemmidelde = getNumberOfSentences(text) / getNumberOfWords(text)
-    if gemmidelde <=7:
-        aviscore = 5
-    elif gemmidelde <= 8:
-        aviscore = 6
-    elif gemmidelde <= 9:
-        aviscore = 7
-    elif gemmidelde <= 10:
-        aviscore = 8 
-    elif gemmidelde <= 11:
-        aviscore = 11 
-    else:
-        aviscore = 12 
-    return aviscore
+    return 0

@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "../../../Leerroutes/dynamische-user-interfaces/Module 2 - DOM manipulatie en event handeling"
+		},
+		{
+			"path": "../../../Leerroutes/Leren-programmeren/Module 5 - meer functions"
+		},
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../Leerroutes/statische-front-end/Module 2 - responsiveness"
+		},
+		{
+			"path": "../../../Leerroutes/statische-front-end/Module 1 - elementen en properties"
+		},
+		{
+			"path": "../../../Leerroutes/De basics-van-back-end/Learning-php"
+		}
+	],
+	"settings": {}
+}
