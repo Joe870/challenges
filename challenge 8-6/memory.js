@@ -1,32 +1,37 @@
-img = ''
-arrayofimages = ['images/image1.webp','images/image2.png','images/image3.jpeg','images/image4.png','images/image5.webp','images/image6.png','images/image7.png','images/image8.jpg','images/image9.png','images/image10.png','images/image1.webp','images/image2.png','images/image3.jpeg','images/image4.png','images/image5.webp','images/image6.png','images/image7.png','images/image8.jpg','images/image9.png','images/image10.png']
+images = ['image1.webp','image2.png','image3.jpeg','image4.png','image5.webp','image6.png','image7.png','image8.jpg','image9.png','image10.png']
+images = images.concat(images)
 
-console.log(arrayofimages)
+bgImage = 'background.png'
+opened = []
 
-arrayofimages = shuffle(arrayofimages)
-function shuffle(array) {
-    let currentIndex = array.length, randomIndex;
-    while (currentIndex != 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]]
+
+// arrayofimages = ['images/image1.webp',id=1,'images/image2.png',id=2,'images/image3.jpeg',id=3,'images/image4.png',id=4,'images/image5.webp',id=5,'images/image6.png',id=6,'images/image7.png',id=7,'images/image8.jpg',id=8,'images/image9.png',id=9,'images/image10.png',id=10,'images/image1.webp',id=1,'images/image2.png', id=2,'images/image3.jpeg',id=3,'images/image4.png',id=4,'images/image5.webp',id=5,'images/image6.png',id=6,'images/image7.png',id=7,'images/image8.jpg',id=8,'images/image9.png',id=9,'images/image10.png',id=10]
+
+console.log(images)
+
+function hide(opened){
+    opened[0].src = 'images/' + bgImage
+    opened[1].src = 'images/' + bgImage
+    opened = []
+}
+
+function clicked(event){
+    if (opened.length == 2){
+        return;
     }
-    return array
-}
-console.log(arrayofimages)
-for(let i = 0; i< 20; i ++){
-    let button = document.createElement('button');
-    let body = document.getElementsByTagName("body")[0]
-    body.appendChild(button);
-    button.id = i
-    console.log(button);
-    button.onclick = handle_click
+    this.src = 'images/' + images[this.nr];
+    opened.push(this)
+    console.dir(opened)
+    if (opened.length == 2){
+        setTimeout(hide,1000)
+    }
+    console.dir(opened)
 }
 
-function handle_click(e){
-    console.dir(this)
-    this.style.background = arrayofimages[0]
-    this.style.backgroundSize = "100%"
+for (let imageNr in images){
+    let img = document.createElement('img');
+    img.src = 'images/' + bgImage;
+    img.nr = imageNr;
+    img.onclick = clicked;
+    playboard.appendChild(img);
 }
-
-

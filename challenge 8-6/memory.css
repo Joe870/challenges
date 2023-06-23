@@ -6,3 +6,8 @@ button{
     background-image: url(images/background.png);
     background-size:100%;
 }
+
+img{
+    width: 100px;
+    height: 100px;
+}
